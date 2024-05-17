@@ -1,20 +1,35 @@
 // import logo from "./logo.svg";
+import { Component } from "react";
 import "./App.css";
 
 const Header = () => {
   return <h2>Hello World!</h2>;
 };
 
-const Field = () => {
-  return <input type="text" placeholder="Type here" />;
-};
+// const Field = () => {
+//   const holder = "Type here";
+//   const styledField = {
+//     width: "300px",
+//   };
+//   return <input type="text" placeholder={holder} style={styledField} />;
+// };
+
+class Field extends Component {
+  render() {
+    const holder = "Type here";
+    const styledField = {
+      width: "300px",
+    };
+
+    return <input type="text" placeholder={holder} style={styledField} />;
+  }
+}
 
 function Btn() {
-  // const text = "Log in";
-  const res = () => {
-    return "Log in";
-  };
-  return <button>{res()}</button>;
+  const text = "Log in";
+  const logged = true;
+
+  return <button>{logged ? "Enter" : text}</button>;
 }
 
 function App() {
@@ -27,4 +42,5 @@ function App() {
   );
 }
 
+export { Header };
 export default App;
