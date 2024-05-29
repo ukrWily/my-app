@@ -3,6 +3,39 @@ import styled from "styled-components";
 
 import "./App.css";
 
+const EmpItem = styled.div`
+  padding: 20px;
+  margin-bottom: 15px;
+  border-radius: 7px;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+  a {
+    display: block;
+    margin: 10px 0 10px 0;
+    color: ${(props) => (props.active ? "orange" : "black")};
+  }
+  input {
+    display: block;
+    margin-top: 10px;
+  }
+`;
+
+const Header = styled.h2`
+  font-size: 22px;
+`;
+
+export const Button = styled.button`
+  display: block;
+  padding: 5px 15px;
+  background-color: gold;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+  transition: all 0.5s;
+  &:hover {
+    box-shadow: 5px 5px 1px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+  }
+`;
+
 class WhoAmI extends Component {
   constructor(props) {
     super(props);
@@ -30,12 +63,12 @@ class WhoAmI extends Component {
     const { name, surname, link } = this.props;
     const { position, years } = this.state;
     return (
-      <Fragment>
-        <button onClick={this.nextYear}>{this.state.text}</button>
-        <h1>
+      <EmpItem active>
+        <Button onClick={this.nextYear}>{this.state.text}</Button>
+        <Header>
           My name is {name}, surname - {surname}, age - {years} years, position
           - {position}
-        </h1>
+        </Header>
         <a href={link}>My profile</a>
         <form>
           <span>Введіть посаду</span>
@@ -44,7 +77,7 @@ class WhoAmI extends Component {
             onChange={(e) => this.commitInputChanges(e, "some color")}
           />
         </form>
-      </Fragment>
+      </EmpItem>
     );
   }
 }

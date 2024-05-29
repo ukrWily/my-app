@@ -3,12 +3,21 @@ import ReactDOM from "react-dom/client";
 import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
-import { Header } from "./App";
+import { Button } from "./App";
+import styled from "styled-components";
+
+//Розширяємо Button
+const BigButton = styled(Button)`
+  margin: 20px auto 0 auto;
+  width: 245px;
+  text-align: center;
+`;
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <StrictMode>
     <App />
+    <BigButton as="a">Send to</BigButton>
   </StrictMode>
 );
 
