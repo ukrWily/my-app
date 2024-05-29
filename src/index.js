@@ -4,13 +4,17 @@ import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { Button } from "./App";
+import BoootstrapTest from "./BoootstrapTest";
 import styled from "styled-components";
+
+import "bootstrap/dist/css/bootstrap.min.css";
 
 //Розширяємо Button
 const BigButton = styled(Button)`
   margin: 20px auto 0 auto;
   width: 245px;
   text-align: center;
+  margin-bottom: 25px;
 `;
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
@@ -18,6 +22,7 @@ root.render(
   <StrictMode>
     <App />
     <BigButton as="a">Send to</BigButton>
+    <BoootstrapTest />
   </StrictMode>
 );
 
